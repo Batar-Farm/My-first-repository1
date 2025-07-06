@@ -4,6 +4,12 @@ module "resource_group" {
   location = "centralindia"
 }
 
+module "resource_group" {
+  source = "../../Modules/azurerm_resource_group"
+  rg_name  = "mango-rg21"
+  location = "centralindia"
+}
+
 module "vnet" {
     depends_on = [ module.resource_group ]
     source = "../../Modules/azurerm_vnet"
