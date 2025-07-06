@@ -19,7 +19,7 @@ module "vnet" {
 
 }
 
-module "vnet" {
+module "vnet2" {
     depends_on = [ module.resource_group ]
     source = "../../Modules/azurerm_vnet"
     vnet_name = "mango-vnet2"
