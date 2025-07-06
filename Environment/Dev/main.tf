@@ -19,6 +19,15 @@ module "vnet" {
 
 }
 
+module "vnet" {
+    depends_on = [ module.resource_group ]
+    source = "../../Modules/azurerm_vnet"
+    vnet_name = "mango-vnet2"
+    rg_name  = "mango-rg22"
+    location = "centralindia"
+
+}
+
 module "frontend_subnet" {
     depends_on = [ module.vnet ]
     source = "../../Modules/azurerm_subnet"
